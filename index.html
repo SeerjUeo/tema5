@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Font Awesome/css/all.min.css">
+    <link rel="stylesheet" href="colors.css">
+    <style>
+        input[type='number'] {
+            -moz-appearance: textfield;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col m-5">
+                <input class="form-control" type="number" id="input1">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 grass" type="button"
+                            onclick="change(1, 'grass')"><i class="fas fa-dice-one"></i></button>
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 green" type="button"
+                            onclick="change(2, 'green')"><i class="fas fa-dice-two"></i></button>
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 lime" type="button"
+                            onclick="change(3, 'lime')"><i class="fas fa-dice-three"></i></button>
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 turquoise" type="button"
+                            onclick="change(4, 'turquoise')"><i class="fas fa-dice-four"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col m-5">
+                <input class="form-control" type="number" id="input2">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 sky" type="button"
+                            onclick="change(1, 'sky')"><i class="fas fa-dice-one"></i></button>
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 bluemarin" type="button"
+                            onclick="change(2, 'bluemarin')"><i class="fas fa-dice-two"></i></button>
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 sea" type="button"
+                            onclick="change(3, 'sea')"><i class="fas fa-dice-three"></i></button>
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 deep-sea" type="button"
+                            onclick="change(4, 'deep-sea')"><i class="fas fa-dice-four"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col m-5">
+                <input class="form-control" type="number" id="input3">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 blueberry" type="button"
+                            onclick="change(1, 'blueberry')"><i class="fas fa-dice-one"></i></button>
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 purple" type="button"
+                            onclick="change(2, 'purple')"><i class="fas fa-dice-two"></i></button>
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 fuchsia" type="button"
+                            onclick="change(3, 'fuchsia')"><i class="fas fa-dice-three"></i></button>
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 madness" type="button"
+                            onclick="change(4, 'madness')"><i class="fas fa-dice-four"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col m-5">
+                <input class="form-control" type="number" id="input4">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 orange" type="button"
+                            onclick="change(1, 'orange')"><i class="fas fa-dice-one"></i></button>
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 lemon" type="button"
+                            onclick="change(2, 'lemon')"><i class="fas fa-dice-two"></i></button>
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 vomit" type="button"
+                            onclick="change(3, 'vomit')"><i class="fas fa-dice-three"></i></button>
+                        <button class="btn btn-outline-secondary mr-4 mt-2 ml-4 cucumber" type="button"
+                            onclick="change(4, 'madness')"><i class="fas fa-dice-four"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script src="PopperJs/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        function change(number, colorClass) {
+            reset();
+            for (let i = 1; i <= 4; i++) {
+                if ($(('input' + i)).val() == number) {
+                    $(('input' + i)).toggleClass(colorClass);
+                }
+            }
+        }
+
+        function reset() {
+            for (let i = 0; i < 4; i++) {
+                $(('input' + i)).removeAttr('style');
+                $(('input' + i)).toggleClass('form-control');
+            }
+        }
+    </script>
+</body>
+</html>
